@@ -138,13 +138,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="main.c" />
-    <ClCompile Include="sBinNode.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="sBinNode.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
