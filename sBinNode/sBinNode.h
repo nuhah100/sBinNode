@@ -1,5 +1,5 @@
 #pragma once
-
+#include <stddef.h>
 
 typedef struct sBinNode {
 	char* str;
@@ -7,9 +7,11 @@ typedef struct sBinNode {
 	struct sBinNode * right;
 } sBinNode;
 
-sBinNode* CreateBinNode(const char *str);
+void* Alloc(size_t y);
 
-void CreateBinNodeWithSons(sBinNode *father, const char *str, sBinNode *left, sBinNode *right);
+void Free(void* _block);
+
+sBinNode* CreateBinNode(const char *str);
 
 void PrintBinNode(sBinNode *node);
 

@@ -6,19 +6,13 @@
 
 sBinNode* CreateBinNode(const char* str)
 {
-	sBinNode* father = (sBinNode*) malloc(sizeof(sBinNode));
+	sBinNode* father = (sBinNode*) Alloc(sizeof(sBinNode));
+	if (father == NULL)
+		return NULL;
 	father->str = str;
 	father->left = NULL;
 	father->right = NULL;
 	return father;
-}
-
-void CreateBinNodeWithSons(sBinNode* father,const char* str, sBinNode* left, sBinNode* right)
-{
-	if(!father)
-		father = CreateBinNode(str);
-	father->left = left;
-	father->right = right;
 }
 
 void PrintBinNode(sBinNode* node)
@@ -45,7 +39,7 @@ void FreeMemory(sBinNode* father)
 	{
  		tempL = father->left;
 		tempR = father->right;
-		free(father);
+		Free(father);
 		FreeMemory(tempL);
 		FreeMemory(tempR);
 	}
