@@ -33,16 +33,11 @@ void PrintBinNode(sBinNode* node)
 
 void FreeMemory(sBinNode* father)
 {
-	sBinNode *tempL, *tempR;
-
-	if (father != NULL)
-	{
- 		tempL = father->left;
-		tempR = father->right;
-		Free(father);
-		FreeMemory(tempL);
-		FreeMemory(tempR);
-	}
+	if(father != NULL && father->left != NULL)
+		FreeMemory(father->left);
+	if(father->right != NULL)
+		FreeMemory(father->right);
+	Free(father);
 }
 
 
